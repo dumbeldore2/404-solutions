@@ -1,0 +1,14 @@
+enable 
+interface g0/0
+ip address 10.32.101.254 255.255.255.0
+no shutdown
+
+interface g0/1
+ip address 10.33.101.254 255.255.255.0
+no shutdow
+
+en
+config t
+Router(config)#ip route 10.32.101.0 255.255.255.0 10.32.101.1
+Router(config)#ip route 10.33.101.0 255.255.255.0 10.33.101.1
+
