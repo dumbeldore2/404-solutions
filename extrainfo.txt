@@ -1,0 +1,2 @@
+eens router opgezet is en fase 1 up is. doe je dit voor fase 2
+  Diagnose vpn tunnel up GenkLeuven2 of LeuvenGenk2
