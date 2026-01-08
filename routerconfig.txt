@@ -1,0 +1,112 @@
+Building configuration...
+
+Current configuration : 1285 bytes
+!
+! Last configuration change at 09:01:04 UTC Thu Jan 8 2026
+!
+version 17.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+platform punt-keepalive disable-kernel-core
+!
+hostname Router
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+vtp version 1
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+license udi pid C8200L-1N-4T sn FCZ2903R1JA
+memory free low-watermark processor 61411
+!
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+!
+redundancy
+ mode none
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0/0
+ ip address 10.32.101.254 255.255.255.0
+ negotiation auto
+!
+interface GigabitEthernet0/0/1
+ ip address 10.33.101.254 255.255.255.0
+ negotiation auto
+!
+interface GigabitEthernet0/0/2
+ no ip address
+ negotiation auto
+!
+interface GigabitEthernet0/0/3
+ no ip address
+ negotiation auto
+!
+no ip http server
+ip http secure-server
+ip forward-protocol nd
+ip route 10.32.101.0 255.255.255.0 10.32.101.1
+ip route 10.33.101.0 255.255.255.0 10.33.101.1
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line aux 0
+line vty 0 4
+ login
+ transport input ssh
+line vty 5 14
+ login
+ transport input ssh
+!
+!
+!
+!
+!
+!
+!
+end
